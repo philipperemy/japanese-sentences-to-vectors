@@ -1,0 +1,4 @@
+[submodule "skipthoughts"]
+	path = skipthoughts
+        url = https://github.com/ryankiros/skip-thoughts.git
+        ignore = dirty
