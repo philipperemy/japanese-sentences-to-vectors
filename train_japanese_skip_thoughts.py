@@ -7,7 +7,8 @@ import skipthoughts.training.train as st_train
 import skipthoughts.training.vocab as st_vocab
 
 if __name__ == '__main__':
-    os.mkdir('tmp')
+    if not os.path.exists('tmp'):
+        os.makedirs('tmp')
     X = ['cat is on the floor.'] * 100
     word_dict, wordcount = st_vocab.build_dictionary(X)
     st_vocab.save_dictionary(word_dict, wordcount, 'tmp/dict.dat')

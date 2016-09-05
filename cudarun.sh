@@ -1,0 +1,1 @@
+THEANO_FLAGS='mode=FAST_RUN,device=gpu0,floatX=float32,optimizer_including=cudnn,lib.cnmem=0.5' python train_japanese_skip_thoughts.py
