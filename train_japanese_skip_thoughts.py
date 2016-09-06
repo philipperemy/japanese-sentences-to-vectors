@@ -8,11 +8,8 @@ import skipthoughts.training.tools as st_tools
 import skipthoughts.training.train as st_train
 import skipthoughts.training.vocab as st_vocab
 
-#SENTENCES_FILENAME = 'jawiki-latest-text-sentences-tokens.txt'
+SENTENCES_FILENAME = 'jawiki-latest-text-sentences-tokens.txt'
 W2V_FILENAME = 'ja-gensim.50d.data.txt'
-
-
-SENTENCES_FILENAME = 'test.txt'
 
 
 def load_w2v_vectors(path_to_w2v):
@@ -20,9 +17,9 @@ def load_w2v_vectors(path_to_w2v):
 
 
 if __name__ == '__main__':
+    print('** Reading the sentences from <{}> ...'.format(SENTENCES_FILENAME), end="")
     with open(SENTENCES_FILENAME, 'r') as inp:
         X = []
-        print('** Reading the sentences from <{}> ...'.format(SENTENCES_FILENAME), end="")
         for line in inp.readlines():
             if not re.match('[a-zA-Z]+', line):
                 X.append(line.strip())
